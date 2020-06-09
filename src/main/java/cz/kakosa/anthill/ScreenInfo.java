@@ -2,8 +2,10 @@ package cz.kakosa.anthill;
 
 import cz.kakosa.anthill.ants.*;
 import cz.kakosa.pixelsim.Renderer;
-import cz.kakosa.pixelsim.SimContainer;
 
+/**
+ * Screen info is information about controls and the simulation displayed on the righthand side of the viewport.
+ */
 public class ScreenInfo {
 
     Ant selectedAnt = null;

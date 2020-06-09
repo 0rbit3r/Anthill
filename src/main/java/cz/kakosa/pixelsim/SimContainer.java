@@ -1,5 +1,9 @@
 package cz.kakosa.pixelsim;
 
+/**
+ * Main loop of the simulation happens here.
+ * Stores Window, Simulation, Input and Renderer objects.
+ */
 public class SimContainer implements  Runnable{
 
     private Thread thread;
@@ -17,9 +21,9 @@ public class SimContainer implements  Runnable{
 
     /**
      * Sets up Dimensions and stores Simulation Object that called the constructor
-     * @param sim
-     * @param width
-     * @param height
+     * @param sim Simulation which will be run
+     * @param width window Width
+     * @param height window height
      */
     public SimContainer(AbstractSimulation sim, int  width, int height){
 

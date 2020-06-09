@@ -2,18 +2,33 @@ package cz.kakosa.anthill;
 
 import java.util.Random;
 
+/**
+ * Terrain is the map where the simulation happens.
+ * Complete with random map generation and arrays that make rendering easier.
+ */
 public class Terrain implements Runnable{
 
     private SimManager sm;
 
+    /**
+     * Voxels store each pixel of the map as a block of material.
+     */
     private Material[][][] voxels;
 
+    /**
+     * Colormap is used for rendering. The camera sees not only current slice but also past it up to a certain distance.
+     * Hence it is faster to have all these layers preloaded instead of computing each air pixels value based on what's bellow it every time the camera moves.
+     */
     private int[][][] colorMap;
 
     private int width, height, depth = 220;
     private int visDepth = 50;
     private Random r;
 
+    /**
+     * If x-ray is on. User can see better underground.
+     * It is achived througn the "light" that is manifestes as a gradient of a materials color in colorMap being able to go through not only air but air and then solid blocks (until it encounters air for the second time).
+     */
     private boolean xRay;
 
     /**

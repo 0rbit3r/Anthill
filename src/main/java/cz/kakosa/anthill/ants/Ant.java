@@ -5,7 +5,9 @@ import cz.kakosa.anthill.Terrain;
 
 import java.util.Random;
 
-
+/**
+ * Ant is displayed as a single moving pixel on the map.
+ */
 public abstract class Ant {
 
     Random r;
@@ -85,7 +87,7 @@ public abstract class Ant {
         t.setColorMapAt(posX, posY, posZ);
 
         if ( ! t.getVoxelAt(oldX,oldY,oldZ-1).isSolid()){
-            for (int i = 0; i <= t.getVisDepth(); i++) { //vyčištění sloupce nahoru
+            for (int i = 0; i <= t.getVisDepth(); i++) { //cleaning up the column above
                 if (t.checkBoundaries(oldX, oldY, oldZ + i)) {
                     if (t.getVoxelAt(oldX, oldY, oldZ + i) == null || t.getVoxelAt(oldX, oldY, oldZ + i) != Material.AIR)
                         break;

@@ -5,6 +5,9 @@ import cz.kakosa.anthill.Terrain;
 
 import java.util.Random;
 
+/**
+ * Queen builds the main shaft of the nest and then lies in the center of it laying eggs.
+ */
 public class QueenAnt extends Ant {
 
     int foodEaten = 100;
